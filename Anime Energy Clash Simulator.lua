@@ -212,7 +212,7 @@ end,
 end,
  })
 
- local WallSection = MainTab:CreateToggle({
+local WallSection = MainTab:CreateToggle({
     Name = "auto egg",
     CurrentValue = false,
     Flag = "Toggle4", 
