@@ -136,7 +136,10 @@ local WallSection = MainTab:CreateToggle({
             game:GetService("ReplicatedStorage").Remote.Event.Reward:FindFirstChild("[C-S]TryGetReward"):FireServer(unpack(args))
 
             wait()
+            if autoReward == false then
+                break
+            end
         end
     end
 end,
-})   
+})            
