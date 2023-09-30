@@ -176,7 +176,7 @@ end,
     Range = {0, 300},
     Increment = 10,
     Suffix = "speed",
-    CurrentValue = 16,
+    CurrentValue = 10,
     Flag = "Slider1", 
     Callback = function(walkspeed)
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (walkspeed)
@@ -207,6 +207,35 @@ end,
     else
 
         autowin = false
+
+    end
+end,
+ })
+
+ local WallSection = MainTab:CreateToggle({
+    Name = "auto egg",
+    CurrentValue = false,
+    Flag = "Toggle4", 
+    Callback = function(autoEgg)
+    if autoEgg then
+        autoegg = true
+
+        while autoegg == true do      
+
+            local args = {
+                [1] = "Egg10"
+            }
+            
+            game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+            wait()
+            if autoEgg == false then
+                break
+            end
+         end
+    else
+
+        autoegg = false
 
     end
 end,
