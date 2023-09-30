@@ -80,7 +80,7 @@ end,
 local WallSection = MainTab:CreateSection("auto rebirth")
 
 local WallSection = MainTab:CreateToggle({
-    Name = "auto rebirth",
+    Name = "auto birth",
     CurrentValue = false,
     Flag = "Toggle1", 
     Callback = function(Value)
@@ -220,28 +220,15 @@ end,
 
 local WallSection = MainTab:CreateSection("auto wall/kill friend for the ugc , soon ")
 
---local Dropdown = MainTab:CreateDropdown({
---    Name = "wall (take one you can break)",
---    Options = {"Option 1","wall 2","wall 3","wall 4","wall 5","wall 6"},
---    CurrentOption = {"wall1"},
---    MultipleOptions = false,
---    Flag = "Dropdown1", 
---    Callback = function(Option)
---        local WallSection = MainTab:CreateToggle({
---            Name = "auto wall",
---            CurrentValue = false,
---            Flag = "Toggle2", 
---            Callback = function(Autowall)
---            if Autowall then
---              autowall = true
-                
---            else
---                autowall = false
---                print(XD)
---            end
---        end,
---        })
---    end,
---})
+local Dropdown = MainTab:CreateDropdown({
+    Name = "wall (take one you can break)",
+    Options = {"Option 1","wall 2","wall 3","wall 4","wall 5","wall 6"},
+    CurrentOption = {"wall1"},
+    MultipleOptions = false,
+    Flag = "Dropdown1", 
+    Callback = function(Option)
+        print(Option)
+    end,
+})
 
  
