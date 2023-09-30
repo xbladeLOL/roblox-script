@@ -176,7 +176,7 @@ end,
     Range = {0, 300},
     Increment = 10,
     Suffix = "speed",
-    CurrentValue = 10,
+    CurrentValue = 16,
     Flag = "Slider1", 
     Callback = function(walkspeed)
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (walkspeed)
