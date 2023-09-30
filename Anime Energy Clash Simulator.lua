@@ -140,6 +140,8 @@ local WallSection = MainTab:CreateToggle({
                 break
             end
         end
+     else
+        autoreward = false
     end
 end,
 })            
