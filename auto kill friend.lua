@@ -75,7 +75,7 @@ end,
 local WallSection = MainTab:CreateSection("auto rebirth")
 
 local WallSection = MainTab:CreateToggle({
-    Name = "auto birth",
+    Name = "auto rebirth",
     CurrentValue = false,
     Flag = "Toggle2", 
     Callback = function(autoRebirth)
@@ -210,41 +210,41 @@ end,
 
 local WallSection = MainTab:CreateSection("auto wall/kill friend for the ugc , soon ")
 
-local Dropdown = MainTab:CreateDropdown({
-    Name = "wall (take one you can break)",
-    Options = {"wall 1" ,"wall 2" ,"wall 3" ,"wall 4" ,"wall 5"},
-    CurrentOption = {"wall1"},
-    MultipleOptions = false,
-    Flag = "Dropdown1", 
-    Callback = function(Optionx)
-        print(Option[1])
-    end,
-})
+--local Dropdown = MainTab:CreateDropdown({
+--    Name = "wall (take one you can break)",
+--    Options = {"wall 1" ,"wall 2" ,"wall 3" ,"wall 4" ,"wall 5"},
+--    CurrentOption = {"wall1"},
+--    MultipleOptions = false,
+--    Flag = "Dropdown1", 
+--    Callback = function(Optionx)
+--        print(Option[1])
+--    end,
+--})
 
- local WallSection = MainTab:CreateToggle({
-    Name = "auto wall ofr wins",
-    CurrentValue = false,
-    Flag = "Toggle3", 
-    Callback = function(autoWall)
-    if autoWall then
-        autowall = true
+ --local WallSection = MainTab:CreateToggle({
+ --   Name = "auto wall ofr wins",
+ --   CurrentValue = false,
+ --   Flag = "Toggle3", 
+ --   Callback = function(autoWall)
+ --   if autoWall then
+ --       autowall = true
+ --
+ --       while autowall == true do           
+ --           local args = {
+ --               [1] = Vector3.new(-45.11382293701172, 3.400007724761963, 5.894510746002197),
+ --               [2] = "Target9_2"
+ --            }
+ --       
+ --           game:GetService("ReplicatedStorage").Remotes.Fire:FireServer(unpack(args))
+ --           wait()
+ --           if autoWall == false then
+ --               break
+ --           end
+ --        end
+ --   else
+ --
+ --       autowall = false
 
-        while autowall == true do           
-            local args = {
-                [1] = Vector3.new(-45.11382293701172, 3.400007724761963, 5.894510746002197),
-                [2] = "Target9_2"
-             }
-        
-            game:GetService("ReplicatedStorage").Remotes.Fire:FireServer(unpack(args))
-            wait()
-            if autoWall == false then
-                break
-            end
-         end
-    else
-
-        autowall = false
-
-    end
-end,
- })
+ --   end
+--end,
+--})
