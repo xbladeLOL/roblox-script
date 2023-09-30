@@ -105,8 +105,8 @@ local WallSection = MainTab:CreateToggle({
     Name = "auto claim gift",
     CurrentValue = false,
     Flag = "Toggle3", 
-    Callback = function(autoGift)
-    if autoGift then
+    Callback = function(autoclaimGift)
+    if autoclaimGift then
         autogift = true
 
         while autogift == true do           
@@ -201,6 +201,8 @@ local WallSection = MainTab:CreateToggle({
                 break
             end
          end
+            else
+                autogift == false
     end
 end,
  })
