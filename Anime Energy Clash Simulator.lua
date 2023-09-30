@@ -54,3 +54,89 @@ local WallSection = MainTab:CreateToggle({
     end
 end,
  })
+
+local WallSection = MainTab:CreateToggle({
+    Name = "auto claim reward",
+    CurrentValue = false,
+    Flag = "Toggle2", 
+    Callback = function(autoReward)
+    if autoReward then
+        autoreward = true
+
+        while autoreward == true do 
+            local args = {
+                [1] = "1"
+            }
+
+            game:GetService("ReplicatedStorage").Remote.Event.Reward:FindFirstChild("[C-S]TryGetReward"):FireServer(unpack(args))
+
+
+            local args = {
+                [1] = "2"
+            }
+
+            game:GetService("ReplicatedStorage").Remote.Event.Reward:FindFirstChild("[C-S]TryGetReward"):FireServer(unpack(args))
+
+            local args = {
+                [1] = "3"
+            }
+
+            game:GetService("ReplicatedStorage").Remote.Event.Reward:FindFirstChild("[C-S]TryGetReward"):FireServer(unpack(args))
+
+            local args = {
+                [1] = "4"
+            }
+
+            game:GetService("ReplicatedStorage").Remote.Event.Reward:FindFirstChild("[C-S]TryGetReward"):FireServer(unpack(args))
+
+            local args = {
+                [1] = "5"
+            }
+
+            game:GetService("ReplicatedStorage").Remote.Event.Reward:FindFirstChild("[C-S]TryGetReward"):FireServer(unpack(args))
+
+            local args = {
+                [1] = "6"
+            }
+
+            game:GetService("ReplicatedStorage").Remote.Event.Reward:FindFirstChild("[C-S]TryGetReward"):FireServer(unpack(args))
+
+            local args = {
+                [1] = "7"
+            }
+
+            game:GetService("ReplicatedStorage").Remote.Event.Reward:FindFirstChild("[C-S]TryGetReward"):FireServer(unpack(args))
+ 
+            local args = {
+                [1] = "8"
+            }
+
+            game:GetService("ReplicatedStorage").Remote.Event.Reward:FindFirstChild("[C-S]TryGetReward"):FireServer(unpack(args))
+            
+            local args = {
+                [1] = "9"
+            }
+
+            game:GetService("ReplicatedStorage").Remote.Event.Reward:FindFirstChild("[C-S]TryGetReward"):FireServer(unpack(args))
+
+            local args = {
+                [1] = "10"
+            }
+
+            local args = {
+                [1] = "11"
+            }
+
+            game:GetService("ReplicatedStorage").Remote.Event.Reward:FindFirstChild("[C-S]TryGetReward"):FireServer(unpack(args))
+
+            local args = {
+                [1] = "12"
+            }
+
+            game:GetService("ReplicatedStorage").Remote.Event.Reward:FindFirstChild("[C-S]TryGetReward"):FireServer(unpack(args))
+
+            wait()
+        end
+    end
+end,
+})   
