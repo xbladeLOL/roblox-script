@@ -223,7 +223,7 @@ end,
         while autoegg == true do      
 
             local args = {
-                [1] = "Egg10"
+                [1] = "Egg16"
             }
             
             game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
