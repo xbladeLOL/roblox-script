@@ -80,18 +80,15 @@ end,
 local WallSection = MainTab:CreateSection("auto rebirth")
 
 local WallSection = MainTab:CreateToggle({
-    Name = "auto birth",
+    Name = "auto rebirth",
     CurrentValue = false,
-    Flag = "Toggle1", 
-    Callback = function(Value)
-    if Value then
+    Flag = "Toggle2", 
+    Callback = function(autoRebirth)
+    if autoRebirth then
         autorebirth = true
 
-        while autoarrow == true do           
-            local args = {
-                [1] = Vector3.new(-45.11382293701172, 3.400007724761963, 5.894510746002197),
-                [2] = "Target9_2"
-             }
+        while autorebirth == true do           
+            --la truc des autorebirth
         
             game:GetService("ReplicatedStorage").Remotes.Fire:FireServer(unpack(args))
             wait()
@@ -112,9 +109,9 @@ end,
 local WallSection = MainTab:CreateToggle({
     Name = "auto claim gift",
     CurrentValue = false,
-    Flag = "Toggle1", 
-    Callback = function(autogift)
-    if autogift then
+    Flag = "Toggle3", 
+    Callback = function(autoGift)
+    if autoGift then
         autogift = true
 
         while autogift == true do           
@@ -222,8 +219,8 @@ local WallSection = MainTab:CreateSection("auto wall/kill friend for the ugc , s
 
 local Dropdown = MainTab:CreateDropdown({
     Name = "wall (take one you can break)",
-    Options = {"Option 1","wall 2","wall 3","wall 4","wall 5","wall 6"},
-    CurrentOption = {"wall1"},
+    Options = {"wall 1","wall 2","wall 3","wall 4","wall 5","wall 6"},
+    CurrentOption = {"choose one"},
     MultipleOptions = false,
     Flag = "Dropdown1", 
     Callback = function(Option)
