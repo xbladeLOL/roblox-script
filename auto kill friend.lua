@@ -95,10 +95,6 @@ local WallSection = MainTab:CreateToggle({
                 break
             end
          end
-    else
-
-        autorebirth = false
-
     end
 end,
  })
@@ -201,14 +197,10 @@ local WallSection = MainTab:CreateToggle({
             game:GetService("ReplicatedStorage").Remotes.ReplicateGui:FireServer(unpack(args))
 
             wait()
-            if autogift == false then
+            if autoGift == false then
                 break
             end
          end
-    else
-
-        autoregift = false
-
     end
 end,
  })
