@@ -83,15 +83,15 @@ local WallSection = MainTab:CreateToggle({
     Name = "auto rebirth",
     CurrentValue = false,
     Flag = "Toggle2", 
-    Callback = function(autoRebirth)
-    if autoRebirth then
+    Callback = function(automangetmort)
+    if automangetmort then
         autorebirth = true
 
         while autorebirth == true do           
             --la truc des autorebirth
         
             wait()
-            if Value == false then
+            if autoRebitrh == false then
                 break
             end
          end
@@ -197,7 +197,7 @@ local WallSection = MainTab:CreateToggle({
             game:GetService("ReplicatedStorage").Remotes.ReplicateGui:FireServer(unpack(args))
 
             wait()
-            if autoGift == false then
+            if automangetmort == false then
                 break
             end
          end
