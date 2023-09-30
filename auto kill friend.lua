@@ -90,7 +90,6 @@ local WallSection = MainTab:CreateToggle({
         while autorebirth == true do           
             --la truc des autorebirth
         
-            game:GetService("ReplicatedStorage").Remotes.Fire:FireServer(unpack(args))
             wait()
             if Value == false then
                 break
