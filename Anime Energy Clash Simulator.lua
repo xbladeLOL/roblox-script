@@ -140,8 +140,45 @@ local WallSection = MainTab:CreateToggle({
                 break
             end
         end
-     else
+    else
         autoreward = false
     end
 end,
 })            
+
+local WallSection = MainTab:CreateToggle({
+    Name = "auto rebirth",
+    CurrentValue = false,
+    Flag = "Toggle3", 
+    Callback = function(autoRebirth)
+    if autoRebirth then
+        autosrebirth = true
+
+        while autosrebirth == true do           
+
+            game:GetService("ReplicatedStorage").Remote.Event.Rebirth:FindFirstChild("[C-S]TryBuyRebirth"):FireServer()
+
+            wait()
+            if autoRebirth == false then
+                break
+            end
+         end
+    else
+
+        autosrebirth = false
+
+    end
+end,
+ })
+
+ local Slider = MiscTab:CreateSlider({
+    Name = "walk speed",
+    Range = {0, 300},
+    Increment = 10,
+    Suffix = "speed",
+    CurrentValue = 10,
+    Flag = "Slider1", 
+    Callback = function(walkspeed)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (walkspeed)
+    end,
+ })
