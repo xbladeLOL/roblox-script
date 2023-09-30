@@ -182,3 +182,32 @@ end,
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (walkspeed)
     end,
  })
+
+ local WallSection = MainTab:CreateToggle({
+    Name = "auto win , it give you the reward of the last boss whith you fight",
+    CurrentValue = false,
+    Flag = "Toggle4", 
+    Callback = function(autoWin)
+    if autoWin then
+        autowin = true
+
+        while autowin == true do      
+
+            local args = {
+                [1] = true
+            }
+
+            game:GetService("ReplicatedStorage").Remote.Event.Game:FindFirstChild("[C-S]PlayerPKEnd"):FireServer(unpack(args))
+
+            wait()
+            if autoWin == false then
+                break
+            end
+         end
+    else
+
+        autowin = false
+
+    end
+end,
+ })
