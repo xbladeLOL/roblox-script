@@ -212,30 +212,59 @@ end,
 end,
  })
 
+ --local WallSection = MainTab:CreateToggle({
+ --   Name = "auto egg",
+ --   CurrentValue = false,
+ --   Flag = "Toggle4", 
+ --   Callback = function(autoEgg)
+ --   if autoEgg then
+ --       autoegg = true
+
+ --       while autoegg == true do      
+
+ --       local args = {
+ --               [1] = "Egg16"
+ --           }
+            
+ --           game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+ --           wait()
+ --           if autoEgg == false then
+ --               break
+ --             end
+ --        end
+ --   else
+
+--        autoegg = false
+
+--    end
+--end,
+-- })
+
  local WallSection = MainTab:CreateToggle({
-    Name = "auto egg",
+    Name = "auto claim event gift",
     CurrentValue = false,
     Flag = "Toggle4", 
-    Callback = function(autoEgg)
-    if autoEgg then
-        autoegg = true
+    Callback = function(autoEvent)
+    if autoEvent then
+        autoevent = true
 
-        while autoegg == true do      
+        while autoevent== true do      
 
             local args = {
-                [1] = "Egg16"
+                [1] = "E700"
             }
             
-            game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+            game:GetService("ReplicatedStorage").Remote.Event.Events:FindFirstChild("[C-S]TryGetEventReward"):FireServer(unpack(args))
 
             wait()
-            if autoEgg == false then
+            if autoEvent == false then
                 break
             end
          end
     else
 
-        autoegg = false
+        autoevent = false
 
     end
 end,
