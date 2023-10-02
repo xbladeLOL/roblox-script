@@ -56,7 +56,7 @@ end,
  })
 
 local WallSection = MainTab:CreateToggle({
-    Name = "auto claim reward",
+    Name = "auto claim gift",
     CurrentValue = false,
     Flag = "Toggle2", 
     Callback = function(autoReward)
