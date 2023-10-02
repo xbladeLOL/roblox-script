@@ -212,33 +212,33 @@ end,
 end,
  })
 
- local WallSection = MainTab:CreateToggle({
-    Name = "auto egg",
-    CurrentValue = false,
-    Flag = "Toggle4", 
-    Callback = function(autoEgg)
-    if autoEgg then
-        autoegg = true
+-- local WallSection = MainTab:CreateToggle({
+--   Name = "auto egg",
+--    CurrentValue = false,
+--    Flag = "Toggle4", 
+--    Callback = function(autoEgg)
+--    if autoEgg then
+--        autoegg = true
 
-        while autoegg == true do      
+ --       while autoegg == true do      
 
-            local args = {
-                [1] = "Egg16"
-            }
-            
-            game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+  --          local args = {
+  --              [1] = "Egg16"
+  --          }
+  --          
+  --          game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
 
-            wait()
-            if autoEgg == false then
-                break
-            end
-         end
-    else
+ --           wait()
+ --           if autoEgg == false then
+ --               break
+ --          end
+ --        end
+ --   else
 
-        autoegg = false
+ --       autoegg = false
 
-    end
-end,
+ --   end
+--end,
  })
 
  local WallSection = MainTab:CreateToggle({
