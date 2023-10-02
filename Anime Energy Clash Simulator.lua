@@ -239,7 +239,7 @@ end,
 
  --   end
 --end,
- })
+-- })
 
  local WallSection = MainTab:CreateToggle({
     Name = "auto claim event gift",
