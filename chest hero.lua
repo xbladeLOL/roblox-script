@@ -43,7 +43,7 @@ local Slider = MiscTab:CreateSlider({
  })
 
  local WallSection = MainTab:CreateToggle({
-    Name = "auto rebirth",
+    Name = "auto chest + auto store",
     CurrentValue = false,
     Flag = "Toggle2", 
     Callback = function(autoChest)
