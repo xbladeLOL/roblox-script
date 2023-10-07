@@ -1,1 +1,6 @@
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/malicious-dev/RobloxScripting/main/punchsimulator.lua'),true))()
+local PlaceId = game.PlaceId
+
+if PlaceId == 13370783664 then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/xbladeLOL/roblox-script/main/Anime%20Energy%20Clash%20Simulator.lua'))()
+elseif PlaceId == 13748085494 then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/xbladeLOL/roblox-script/main/auto%20kill%20friend.lua'))()
