@@ -29,3 +29,15 @@ local Window = Rayfield:CreateWindow({
 local MainTab = Window:CreateTab("🏘️main🏘️") 
 
 local MiscTab = Window:CreateTab("🎲misc🎲")
+
+local Slider = MiscTab:CreateSlider({
+    Name = "walk speed",
+    Range = {0, 300},
+    Increment = 10,
+    Suffix = "speed",
+    CurrentValue = 10,
+    Flag = "Slider1", 
+    Callback = function(walkspeed)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (walkspeed)
+    end,
+ })
