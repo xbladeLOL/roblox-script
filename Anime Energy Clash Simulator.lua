@@ -30,6 +30,8 @@ local MainTab = Window:CreateTab("🏘️main🏘️")
 
 local MiscTab = Window:CreateTab("🎲misc🎲")
 
+local TeleportTab = Window:CreateTab("🥏teleport🥏") 
+
 local WallSection = MainTab:CreateToggle({
     Name = "auto swing sword",
     CurrentValue = false,
@@ -56,7 +58,7 @@ end,
  })
 
 local WallSection = MainTab:CreateToggle({
-    Name = "auto claim gift",
+    Name = "auto claim reward",
     CurrentValue = false,
     Flag = "Toggle2", 
     Callback = function(autoReward)
@@ -212,34 +214,35 @@ end,
 end,
  })
 
--- local WallSection = MainTab:CreateToggle({
---   Name = "auto egg",
---    CurrentValue = false,
---    Flag = "Toggle4", 
---    Callback = function(autoEgg)
---    if autoEgg then
---        autoegg = true
+ local WallSection = MainTab:CreateToggle({
+    Name = "auto egg",
+    CurrentValue = false,
+    Flag = "Toggle4", 
+    Callback = function(autoEgg)
+    if autoEgg then
+        autoegg = true
 
- --       while autoegg == true do      
+        while autoegg == true do      
 
-  --          local args = {
-  --              [1] = "Egg16"
-  --          }
-  --          
-  --          game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+            local args = {
+            [1] = "Egg1"
+            }
 
- --           wait()
- --           if autoEgg == false then
- --               break
- --          end
- --        end
- --   else
+            game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
 
- --       autoegg = false
 
- --   end
---end,
--- })
+            wait()
+            if autoEgg == false then
+                break
+            end
+         end
+    else
+
+        autoegg = false
+
+    end
+ end,
+ })
 
  local WallSection = MainTab:CreateToggle({
     Name = "auto claim event gift",
@@ -295,3 +298,94 @@ local WallSection = MainTab:CreateToggle({
     end
 end,
  })
+
+ local Dropdown = eggTab:CreateDropdown({
+    Name = "Dropdown Example",
+    Options = {"egg ","Option 2"},
+    CurrentOption = {"Option 1"},
+    MultipleOptions = false,
+    Flag = "Dropdown1", 
+    Callback = function(Option)
+        
+    end,
+ })
+
+ local Button = TeleportTab:CreateButton({
+    Name = "teleport world 1",
+    Callback = function()
+        local args = {
+            [1] = workspace.Check.ToWorld1
+        }
+        
+        game:GetService("ReplicatedStorage").Remote.Event.Game:FindFirstChild("[C-S]PlayerTP"):FireServer(unpack(args))        
+    end,
+ })
+
+
+ local Button = TeleportTab:CreateButton({
+    Name = "teleport world 2",
+    Callback = function()
+        local args = {
+            [1] = workspace.Check.ToWorld2
+        }
+        
+        game:GetService("ReplicatedStorage").Remote.Event.Game:FindFirstChild("[C-S]PlayerTP"):FireServer(unpack(args))        
+    end,
+ })
+
+
+ local Button = TeleportTab:CreateButton({
+    Name = "teleport world 3",
+    Callback = function()
+        local args = {
+            [1] = workspace.Check.ToWorld3
+        }
+        
+        game:GetService("ReplicatedStorage").Remote.Event.Game:FindFirstChild("[C-S]PlayerTP"):FireServer(unpack(args))        
+    end,
+ })
+
+ local Button = TeleportTab:CreateButton({
+    Name = "teleport world 4",
+    Callback = function()
+        local args = {
+            [1] = workspace.Check.ToWorld4
+        }
+        
+        game:GetService("ReplicatedStorage").Remote.Event.Game:FindFirstChild("[C-S]PlayerTP"):FireServer(unpack(args))        
+    end,
+ })
+
+ local Button = TeleportTab:CreateButton({
+    Name = "teleport world 5",
+    Callback = function()
+        local args = {
+            [1] = workspace.Check.ToWorld5
+        }
+        
+        game:GetService("ReplicatedStorage").Remote.Event.Game:FindFirstChild("[C-S]PlayerTP"):FireServer(unpack(args))        
+    end,
+ })
+
+ local Button = TeleportTab:CreateButton({
+    Name = "teleport world 6",
+    Callback = function()
+        local args = {
+            [1] = workspace.Check.ToWorld6
+        }
+        
+        game:GetService("ReplicatedStorage").Remote.Event.Game:FindFirstChild("[C-S]PlayerTP"):FireServer(unpack(args))        
+    end,
+ })
+
+ local Button = TeleportTab:CreateButton({
+    Name = "teleport world 7",
+    Callback = function()
+        local args = {
+            [1] = workspace.Check.ToWorld7
+        }
+        
+        game:GetService("ReplicatedStorage").Remote.Event.Game:FindFirstChild("[C-S]PlayerTP"):FireServer(unpack(args))        
+    end,
+ })
+
