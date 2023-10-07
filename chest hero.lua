@@ -41,3 +41,31 @@ local Slider = MiscTab:CreateSlider({
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (walkspeed)
     end,
  })
+
+ local WallSection = MainTab:CreateToggle({
+    Name = "auto rebirth",
+    CurrentValue = false,
+    Flag = "Toggle2", 
+    Callback = function(autoChest)
+    if autoChest then
+        autochest = true
+
+        while autochest == true do           
+
+            game:GetService("ReplicatedStorage").Packages.Knit.Services.ChestManagerService.RF.Open_Chest:InvokeServer()
+
+            game:GetService("ReplicatedStorage").Packages.Knit.Services.InventoryService.RF.Store_Equipment:InvokeServer()
+
+
+            wait()
+            if autoChest == false then
+                break
+            end
+         end
+    else
+
+        autochest = false
+
+    end
+end,
+ })
