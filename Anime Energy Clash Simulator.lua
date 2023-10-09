@@ -539,7 +539,7 @@ end,
  })
 
  local Toggle = EggTab:CreateToggle({
-    Name = "egg 18",
+    Name = "egg 8",
     CurrentValue = false,
     Flag = "Toggle1", 
     Callback = function(autoEgg)
