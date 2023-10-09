@@ -26,9 +26,13 @@ local Window = Rayfield:CreateWindow({
     }
  })
 
+
+
 local MainTab = Window:CreateTab("🏘️main🏘️") 
 
 local TeleportTab = Window:CreateTab("🥏teleport🥏") --
+
+local EggTab = Window:CreateTab("🥚egg🥚")
 
 local MiscTab = Window:CreateTab("🎲misc🎲")
 
@@ -108,9 +112,9 @@ local WallSection = MainTab:CreateToggle({
     Flag = "Toggle1", 
     Callback = function(Value)
     if Value then
-        autoswingsword = true
+        getgenv().autoswingsword = true
 
-        while autoswingsword == true do           
+        while getgenv().autoswingsword == true do           
 
             game:GetService("ReplicatedStorage").Remote.Event.Game:FindFirstChild("[C-S]PlayerClick"):FireServer()
 
@@ -121,7 +125,7 @@ local WallSection = MainTab:CreateToggle({
          end
     else
 
-        autoswingsword = false
+        getgenv().autoswingsword = false
 
     end
 end,
@@ -133,9 +137,9 @@ local WallSection = MainTab:CreateToggle({
     Flag = "Toggle2", 
     Callback = function(autoReward)
     if autoReward then
-        autoreward = true
+        getgenv().autoreward = true
 
-        while autoreward == true do 
+        while getgenv().autoreward == true do 
             local args = {
                 [1] = "1"
             }
@@ -213,7 +217,7 @@ local WallSection = MainTab:CreateToggle({
             end
         end
     else
-        autoreward = false
+        getgenv().autoreward = false
     end
 end,
 })            
@@ -224,20 +228,20 @@ local WallSection = MainTab:CreateToggle({
     Flag = "Toggle3", 
     Callback = function(autoRebirth)
     if autoRebirth then
-        autosrebirth = true
+        getgenv().autosrebirth = true
 
-        while autosrebirth == true do           
+        while getgenv().autosrebirth == true do           
 
             game:GetService("ReplicatedStorage").Remote.Event.Rebirth:FindFirstChild("[C-S]TryBuyRebirth"):FireServer()
 
             wait()
-            if autoRebirth == false then
+            if getgenv().autoRebirth == false then
                 break
             end
          end
     else
 
-        autosrebirth = false
+        getgenv().autosrebirth = false
 
     end
 end,
@@ -261,9 +265,9 @@ end,
     Flag = "Toggle4", 
     Callback = function(autoWin)
     if autoWin then
-        autowin = true
+        getgenv().autowin = true
 
-        while autowin == true do      
+        while getgenv().autowin == true do      
 
             local args = {
                 [1] = true
@@ -272,47 +276,17 @@ end,
             game:GetService("ReplicatedStorage").Remote.Event.Game:FindFirstChild("[C-S]PlayerPKEnd"):FireServer(unpack(args))
 
             wait()
-            if autoWin == false then
+            if getgenv().autoWin == false then
                 break
             end
          end
     else
 
-        autowin = false
+        getgenv().autowin = false
 
     end
 end,
  })
-
- --local WallSection = MainTab:CreateToggle({
- --   Name = "auto egg",
- --   CurrentValue = false,
- --   Flag = "Toggle4", 
- --   Callback = function(autoEgg)
- --   if autoEgg then
- --       autoegg = true
-
- --       while autoegg == true do      
-
- --           local args = {
- --           [1] = "Egg1"
- --           }
-
- --           game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
-
-
- --           wait()
- --           if autoEgg == false then
- --               break
- --           end
- --        end
- --   else
-
- --       autoegg = false
-
- --   end
- --end,
- --})
 
  local WallSection = MainTab:CreateToggle({
     Name = "auto claim event gift",
@@ -320,9 +294,9 @@ end,
     Flag = "Toggle4", 
     Callback = function(autoEvent)
     if autoEvent then
-        autoevent = true
+        getgenv().autoevent = true
 
-        while autoevent== true do      
+        while getgenv().autoevent== true do      
 
             local args = {
                 [1] = "E700"
@@ -331,13 +305,13 @@ end,
             game:GetService("ReplicatedStorage").Remote.Event.Events:FindFirstChild("[C-S]TryGetEventReward"):FireServer(unpack(args))
 
             wait()
-            if autoEvent == false then
+            if getgenv().autoEvent == false then
                 break
             end
          end
     else
 
-        autoevent = false
+        getgenv().autoevent = false
 
     end
 end,
@@ -350,9 +324,9 @@ local WallSection = MainTab:CreateToggle({
     Flag = "Toggle4", 
     Callback = function(autoSpin)
     if autoSpin then
-        autospin = true
+        getgenv().autospin = true
 
-        while autospin == true do           
+        while getgenv().autospin == true do           
 
             game:GetService("ReplicatedStorage").Remote.Function.Spin:FindFirstChild("[C-S]TrySpin"):InvokeServer()
 
@@ -363,20 +337,757 @@ local WallSection = MainTab:CreateToggle({
          end
     else
 
-        autospin = false
+        getgenv().autospin = false
 
     end
 end,
  })
 
- local Dropdown = eggTab:CreateDropdown({
-    Name = "Dropdown Example",
-    Options = {"egg ","Option 2"},
-    CurrentOption = {"Option 1"},
-    MultipleOptions = false,
-    Flag = "Dropdown1", 
-    Callback = function(Option)
-        
-    end,
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 1",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg1"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
  })
 
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 2",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg2"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 3",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg3"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 4",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg4"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 5",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg6"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 6",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg9"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 7",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg10"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 18",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg11"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 9",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg12"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 10",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg13"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 11",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg14"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 12",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg15"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 13",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg16"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 14",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg17"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 15",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg18"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 16",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg19"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 17",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg20"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 18",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg21"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 19",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg1"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 20",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg22"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 21",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg23"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 22",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg24"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 23",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg25"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 24",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg26"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 25",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg27"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 26",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg28"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 27",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg29"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
