@@ -1091,3 +1091,32 @@ end,
         end
     end
  })
+
+ local Toggle = EggTab:CreateToggle({
+    Name = "egg 28",
+    CurrentValue = false,
+    Flag = "Toggle1", 
+    Callback = function(autoEgg)
+        if autoEgg then
+            getgenv().autoegg = true
+    
+            while getgenv().autoegg == true do           
+    
+                local args={
+                    [1]="Egg30"
+                }
+                game:GetService("ReplicatedStorage").Remote.Function.Luck:FindFirstChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+                wait()
+                if autoEgg == false then
+                    break
+                end
+             end
+        else
+    
+            getgenv().autoegg = false
+    
+        end
+    end
+ })
+
