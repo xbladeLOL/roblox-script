@@ -105,6 +105,19 @@ local Button = TeleportTab:CreateButton({
     end,
  })
 
+ local Button = TeleportTab:CreateButton({
+    Name = "teleport world event",
+    Callback = function()
+
+        local args = {
+            [1] = workspace.Check.ToHalloween
+        }
+
+        game:GetService("ReplicatedStorage").Remote.Event.Game:FindFirstChild("[C-S]PlayerTP"):FireServer(unpack(args))
+
+    end,
+ })
+
 
 local WallSection = MainTab:CreateToggle({
     Name = "auto swing sword",
