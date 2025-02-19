@@ -1,6 +1,6 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local Sens = "Right"
+local sens = "Right"
 
 local Window = Rayfield:CreateWindow({
     Name = "🦒giraffe hub🦒 ",
@@ -36,7 +36,7 @@ local WallSection = MainTab:CreateToggle({
 
         while insta == true do           
             local args = {
-                [1] = Sens
+                [1] = "Forward"
                 
              }
         
