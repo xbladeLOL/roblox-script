@@ -7,5 +7,5 @@ elseif PlaceId == 13748085494 then
 elseif PlaceId == 14047294951 then
     loadstring(game:HttpGet('https://raw.githubusercontent.com/xbladeLOL/roblox-script/main/chest%20hero.lua'))()
 elseif PlaceId == 119564951960102 then
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/xbladeLOL/roblox-script/main/bomb.lua'))()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/xbladeLOL/roblox-script/main/bombe.lua'))()
 end
