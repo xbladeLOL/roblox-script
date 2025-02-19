@@ -23,6 +23,7 @@ local Dropdown = MainTab:CreateDropdown({
    Callback = function(Options)
         sens = Options
         return sens
+        print(sense)
    end,
 })
 
@@ -37,32 +38,28 @@ local WallSection = MainTab:CreateToggle({
         insta = true
 
         while insta == true do
+            if sens = "Center" 
+                 local args = {
+                   [1] = "Forward"
+                 }
+        
+                  game:GetService("ReplicatedStorage").Rounds.Core.Default.Remotes.Pass:InvokeServer(unpack(args))
+                  wait()
+            elseif sens = "Left" 
+                 local args = {
+                     [1] = "Left"
+                 }
+        
+                game:GetService("ReplicatedStorage").Rounds.Core.Default.Remotes.Pass:InvokeServer(unpack(args))
+                 wait()
 
-               if sens = "Center" 
-                    local args = {
-                        [1] = "Forward"
-                
-                     }
+             elseif sens = "Right" 
+                local args = {
+                     [1] = "Right"
+                 }
         
-                    game:GetService("ReplicatedStorage").Rounds.Core.Default.Remotes.Pass:InvokeServer(unpack(args))
-                    wait()
-                elseif sens = "Left" 
-                    local args = {
-                        [1] = "Left"
-                
-                     }
-        
-                    game:GetService("ReplicatedStorage").Rounds.Core.Default.Remotes.Pass:InvokeServer(unpack(args))
-                    wait()
-
-                elseif sens = "Right" 
-                    local args = {
-                        [1] = "Right"
-                
-                     }
-        
-                    game:GetService("ReplicatedStorage").Rounds.Core.Default.Remotes.Pass:InvokeServer(unpack(args))
-                    wait()
+                game:GetService("ReplicatedStorage").Rounds.Core.Default.Remotes.Pass:InvokeServer(unpack(args))
+                wait()
                     
             if Value == false then
                 break
