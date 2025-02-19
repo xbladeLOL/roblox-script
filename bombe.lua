@@ -26,6 +26,8 @@ local Dropdown = MainTab:CreateDropdown({
    end,
 })
 
+print(sens)
+
 local WallSection = MainTab:CreateToggle({
     Name = "instant pass",
     CurrentValue = false,
@@ -34,14 +36,34 @@ local WallSection = MainTab:CreateToggle({
     if Value then
         insta = true
 
-        while insta == true do           
-            local args = {
-                [1] = "Forward"
+        while insta == true do
+
+               if sens = "Center" 
+                    local args = {
+                        [1] = "Forward"
                 
-             }
+                     }
         
-            game:GetService("ReplicatedStorage").Rounds.Core.Default.Remotes.Pass:InvokeServer(unpack(args))
-            wait()
+                    game:GetService("ReplicatedStorage").Rounds.Core.Default.Remotes.Pass:InvokeServer(unpack(args))
+                    wait()
+                elseif sens = "Left" 
+                    local args = {
+                        [1] = "Left"
+                
+                     }
+        
+                    game:GetService("ReplicatedStorage").Rounds.Core.Default.Remotes.Pass:InvokeServer(unpack(args))
+                    wait()
+
+                elseif sens = "Right" 
+                    local args = {
+                        [1] = "Right"
+                
+                     }
+        
+                    game:GetService("ReplicatedStorage").Rounds.Core.Default.Remotes.Pass:InvokeServer(unpack(args))
+                    wait()
+                    
             if Value == false then
                 break
             end
