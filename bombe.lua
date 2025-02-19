@@ -41,7 +41,7 @@ end,
  })
 
 
-local Dropdown = Tab:CreateDropdown({
+local Dropdown = MainTab:CreateDropdown({
    Name = "Dropdown Example",
    Options = {"Option 1","Option 2"},
    CurrentOption = {"Option 1"},
@@ -53,7 +53,7 @@ local Dropdown = Tab:CreateDropdown({
    end,
 })
 
-local Input = Tab:CreateInput({
+local Input = MainTab:CreateInput({
    Name = "Input Example",
    CurrentValue = "",
    PlaceholderText = "Input Placeholder",
@@ -62,5 +62,12 @@ local Input = Tab:CreateInput({
    Callback = function(Text)
    -- The function that takes place when the input is changed
    -- The variable (Text) is a string for the value in the text box
+   end,
+})
+
+local Buton = Tab:CreateButton({
+   Name = "Close cheat",
+   Callback = function()
+      Rayfield:Destroy()
    end,
 })
