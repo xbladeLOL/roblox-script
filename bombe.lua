@@ -1,6 +1,6 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-Local Sens = "Right"
+local Sens = "Right"
 
 local Window = Rayfield:CreateWindow({
     Name = "🦒giraffe hub🦒 ",
