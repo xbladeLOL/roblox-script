@@ -39,14 +39,14 @@ local WallSection = MainTab:CreateToggle({
         insta = true
 
         while insta == true do
-            if sens = "Center" 
+            if sens == "Center" 
                  local args = {
                    [1] = "Forward"
                  }
         
                   game:GetService("ReplicatedStorage").Rounds.Core.Default.Remotes.Pass:InvokeServer(unpack(args))
                   wait()
-            elseif sens = "Left" 
+            elseif sens == "Left" 
                  local args = {
                      [1] = "Left"
                  }
@@ -54,7 +54,7 @@ local WallSection = MainTab:CreateToggle({
                 game:GetService("ReplicatedStorage").Rounds.Core.Default.Remotes.Pass:InvokeServer(unpack(args))
                  wait()
 
-             elseif sens = "Right" 
+             elseif sens == "Right" 
                 local args = {
                      [1] = "Right"
                  }
