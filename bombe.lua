@@ -65,7 +65,7 @@ local Input = MainTab:CreateInput({
    end,
 })
 
-local Buton = Tab:CreateButton({
+local Buton = MainTab:CreateButton({
    Name = "Close cheat",
    Callback = function()
       Rayfield:Destroy()
