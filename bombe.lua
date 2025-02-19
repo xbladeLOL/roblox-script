@@ -22,8 +22,9 @@ local Dropdown = MainTab:CreateDropdown({
    Flag = "Dropdown1", 
    Callback = function(Options)
         sens = Options
-        return sens
         print(sens)
+        return sens
+        
    end,
 })
 
