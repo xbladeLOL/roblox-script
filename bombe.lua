@@ -1,5 +1,7 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
+Local Sens = "Right"
+
 local Window = Rayfield:CreateWindow({
     Name = "🦒giraffe hub🦒 ",
     LoadingTitle = "🦒giraffe hub🦒",
@@ -12,6 +14,18 @@ local Window = Rayfield:CreateWindow({
 })
 local MainTab = Window:CreateTab("🏘️main🏘️") 
 
+local Dropdown = MainTab:CreateDropdown({
+   Name = "Pass Direction",
+   Options = {"Left","Center", "Right"},
+   CurrentOption = {"Right"},
+   MultipleOptions = false,
+   Flag = "Dropdown1", 
+   Callback = function(Options)
+        sens = Options
+        return sens
+   end,
+})
+
 local WallSection = MainTab:CreateToggle({
     Name = "instant pass",
     CurrentValue = false,
@@ -22,7 +36,7 @@ local WallSection = MainTab:CreateToggle({
 
         while insta == true do           
             local args = {
-                [1] = "Forward"
+                [1] = Sens
                 
              }
         
@@ -39,31 +53,6 @@ local WallSection = MainTab:CreateToggle({
     end
 end,
  })
-
-
-local Dropdown = MainTab:CreateDropdown({
-   Name = "Dropdown Example",
-   Options = {"Option 1","Option 2"},
-   CurrentOption = {"Option 1"},
-   MultipleOptions = false,
-   Flag = "Dropdown1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Options)
-   -- The function that takes place when the selected option is changed
-   -- The variable (Options) is a table of strings for the current selected options
-   end,
-})
-
-local Input = MainTab:CreateInput({
-   Name = "Input Example",
-   CurrentValue = "",
-   PlaceholderText = "Input Placeholder",
-   RemoveTextAfterFocusLost = false,
-   Flag = "Input1",
-   Callback = function(Text)
-   -- The function that takes place when the input is changed
-   -- The variable (Text) is a string for the value in the text box
-   end,
-})
 
 local Buton = MainTab:CreateButton({
    Name = "Close cheat",
