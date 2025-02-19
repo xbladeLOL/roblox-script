@@ -60,7 +60,7 @@ local WallSection = MainTab:CreateToggle({
         
                 game:GetService("ReplicatedStorage").Rounds.Core.Default.Remotes.Pass:InvokeServer(unpack(args))
                 wait()
-                    
+             end
             if Value == false then
                 break
             end
